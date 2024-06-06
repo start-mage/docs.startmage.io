@@ -3,25 +3,6 @@
 > A simple [Docsify](https://github.com/docsifyjs/docsify/) template for creating Markdown-based documentation sites, with no build process required.
 
 
----
-
-Introducing our latest Magento 2 extension: Product Delete Restriction! 
-
-Are you tired of accidental product deletions by your team members? Our extension provides a simple yet effective solution by allowing you to restrict product deletion permissions for specific users or user roles. 
-
-With Product Delete Restriction, you can rest assured that only authorized personnel can remove products from your Magento store, reducing the risk of accidental data loss and maintaining the integrity of your product catalog.
-
-Key features include:
-
-- Granular control: Easily define which users or user roles have the authority to delete products.
-- Error prevention: Prevent accidental deletions by restricting access to the delete functionality.
-- User-friendly interface: Intuitive configuration settings make it simple to manage deletion permissions.
-
-Don't let unauthorized deletions disrupt your business. Install Product Delete Restriction today and enjoy peace of mind knowing that your product data is safe and secure.
-
----
-
-
 ## Site Setup
 
 ### Static Webserver
