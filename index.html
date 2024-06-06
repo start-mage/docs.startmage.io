@@ -40,7 +40,16 @@
         noData: 'No matches found.',
         // Headline depth, 1 - 6
         depth: 2,
-      }
+      },
+      // docsify-copy-code (defaults)
+      copyCode: {
+        buttonText: 'Copy to clipboard',
+        errorText: 'Error',
+        successText: 'Copied',
+      },
+      plugins: [
+        EditOnGithubPlugin.create(docBase, docEditBase, title)
+      ]
     };
   </script>
 
@@ -50,6 +59,7 @@
   <script src="https://docs.startmage.io/src/lib/plugins/zoom-image.min.js"></script>
   <script src="https://docs.startmage.io/src/lib/plugins/search.js"></script>
   <script src="https://docs.startmage.io/src/lib/plugins/copy-code.js"></script>
+  <script src="https://docs.startmage.io/src/lib/plugins/edit-on-github.js"></script>
 
 </body>
 </html>
