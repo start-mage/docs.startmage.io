@@ -1,3 +1,4 @@
 - [Read Me](README)
 - [Example Second Page](second-page)
 - [RestrictProductDelete](RestrictProductDelete/test)
+- [License](../LICENSE)
