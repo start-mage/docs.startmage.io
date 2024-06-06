@@ -47,6 +47,13 @@
         errorText: 'Error',
         successText: 'Copied',
       },
+      EditOnGithubPlugin.create(
+        'https://github.com/start-mage/docs.startmage.io/',
+        null,
+        function(file) {
+          return 'edit on git'
+        }
+      )
     };
   </script>
 
