@@ -47,13 +47,19 @@
         errorText: 'Error',
         successText: 'Copied',
       },
-      EditOnGithubPlugin.create(
-        'https://github.com/start-mage/docs.startmage.io/',
-        null,
-        function(file) {
-          return 'edit on git'
-        }
-      )
+      plugins: [
+        EditOnGithubPlugin.create(
+                'https://github.com/start-mage/docs.startmage.io/',
+                null,
+                function(file) {
+                  if (file.indexOf('en') === -1) {
+                    return '编辑'
+                  } else {
+                    return 'edit on git'
+                  }
+                }
+        )
+      ]
     };
   </script>
 
