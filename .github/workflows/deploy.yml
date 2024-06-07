@@ -1,0 +1,18 @@
+- name: Deploy to Production server
+  uses: easingthemes/ssh-deploy@main
+  environment: production
+  with:
+    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    ARGS: "-rlgoDzvc -i"
+    SOURCE: ""
+    REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+    REMOTE_USER: ${{ secrets.REMOTE_USER }}
+    TARGET: ${{ secrets.REMOTE_TARGET }}
+    EXCLUDE: "/.github/, /node_modules/"
+    SCRIPT_BEFORE: |
+      whoami
+      ls -al
+    SCRIPT_AFTER: |
+      whoami
+      ls -al
+      echo $RSYNC_STDOUT
