@@ -284,13 +284,16 @@ main.hidden {
     outline: none;
     padding: 10px;
     position: absolute;
-    bottom: 0;
     left: 0;
     text-align: center;
     transition: opacity 0.3s;
     width: 284px;
     z-index: 30;
     cursor: pointer;
+
+    top: 0 !important;
+    bottom: auto !important;
+    padding: 10px 10px 10px 10px !important;
 }
 .sidebar-toggle:hover .sidebar-toggle-button {
     opacity: 0.4;
@@ -477,6 +480,10 @@ body.close .content {
     }
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
+    }
+
+    .markdown-section {
+        padding: 16px 16px 16px 36px !important;
     }
 }
 @keyframes octocat-wave {
