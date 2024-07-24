@@ -14,7 +14,7 @@ If you notice the following code snippet in your HTML content:
 </div>
 ```
 
-It indicates a potential misconfiguration in your Varnish setup.
+It indicates a misconfiguration in your Varnish setup and shows that the ESI html tags are not rendered by varnish.
 
 ## Configuring Varnish with ESI Cache
 
