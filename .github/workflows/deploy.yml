@@ -26,7 +26,7 @@ jobs:
           EXCLUDE: "/.github/, /node_modules/"
           SCRIPT_AFTER: |
             whoami
-            python3 ${{ secrets.REMOTE_TARGET }}generate_sitemap.py
+            python3 ${{ secrets.REMOTE_TARGET }}/generate_sitemap.py
 
       - name: Purge cache
         uses: jakejarvis/cloudflare-purge-action@master
