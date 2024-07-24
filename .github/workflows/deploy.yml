@@ -24,6 +24,9 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
           EXCLUDE: "/.github/, /node_modules/"
+          SCRIPT_AFTER: |
+            whoami
+            python3 ${{ secrets.REMOTE_TARGET }}generate_sitemap.py
 
       - name: Purge cache
         uses: jakejarvis/cloudflare-purge-action@master
