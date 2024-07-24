@@ -1,4 +1,5 @@
 - [Read Me](README)
 - [Example Second Page](second-page)
 - [RestrictProductDelete](RestrictProductDelete/test)
+- [Magento 2](Magento-/varnish-esi-cache)
 - [License](license)
