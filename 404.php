@@ -1,7 +1,7 @@
 <?php
 $url = $_SERVER['REQUEST_URI'];
-echo $url;
-if(file_exists($url)) {
+
+if(file_exists($url . '.md')) {
     http_response_code(200);
     include 'index.html';
 }else{
