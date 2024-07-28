@@ -1,7 +1,7 @@
 import datetime
 import os
 
-url = 'https://startmage.io/docs/#'
+url = 'https://startmage.io/docs/'
 exclude_files = [
     'coverpage', 'navbar', 'README', 'sidebar'
 ]
