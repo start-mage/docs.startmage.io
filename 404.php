@@ -1,7 +1,7 @@
 <?php
 $url = $_SERVER['REQUEST_URI'];
-
-if(file_exists(ltrim($url, '/') . '.md')) {
+$url = str_replace('/docs/', '', $url);
+if(file_exists($url . '.md')) {
     http_response_code(200);
     include 'index.html';
 }else{
