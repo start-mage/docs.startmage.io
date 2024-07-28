@@ -3,5 +3,5 @@
 - [RestrictProductDelete](RestrictProductDelete/test)
 
 - Magento 2
-  - [Varnish ESI Cache](Magento-2/varnish-esi-cache)
+  - [Varnish ESI Cache](/docs/Magento-2/varnish-esi-cache)
 - [License](license)
