@@ -40,6 +40,7 @@
     subMaxLevel: 3,
     routerMode: 'history', // default: 'hash'
     nameLink: "/",
+    externalLinkRel: '',
     alias: {
       '/docs/.*/_sidebar.md': '/docs/_sidebar.md',
     },
@@ -94,50 +95,20 @@
     },
     plugins: [
       function (hook) {
-        hook.beforeEach(function (content) { //enabling relative paths (".." not allowed by now)
+        hook.beforeEach(function (content) { //enabling relative paths
           var url = window.location.href;     // Returns full URL
-          lidx = url.lastIndexOf("/");
-          xurl = url.substring(0,lidx);
+          var lidx = url.lastIndexOf("/");
+          var xurl = url.substring(0,lidx);
           var idx = xurl.indexOf("#");
           var purl = xurl.substring(idx + 1, xurl.length);
-          var root_url = xurl.substring(0,idx-1);
-
-          content = content.replace(/(.)?\[([^\]]*)\]\(([^)]*)\)/g,  //enabling relative paths as they should be (by adding "/" in the beginning)
+          return content.replace(/\[([^\]]*)\]\(([^)]*)\)/g,
                   function(x){
-                    if (x.includes("![")){ // don't process images
-                      return x;
+                    if (!x.includes("](/")){
+                      return x.replace("](","]("+purl+"/")
                     }
-                    if ( /\(\s*http(s)?:\/\//.test(x) ){ //don't process external links
-                      return x;
-                    }
-                    while (x.includes("../")){ //enable "outter folders" in relative paths
-                      var the_arr = purl.split('/');
-                      the_arr.pop();
-                      purl = the_arr.join('/') ;
-                      x = x.replace("../","")
-                    }
-
-                    if ( !/\((.*?).md(\s|\))/.test(x) ){ // Automatically add ":ignore" to all not ".md" links
-                      if (!/\((.*?)\/(\s|\))/.test(x)){                                      // when the path is a folder
-                        if( (!x.includes("\":ignore\"")) &&  (!x.includes("\":ignore\""))  ){
-                          x = x.replace(")"," \":ignore\")")
-                        }
-                      }
-                    }
-                    if (!x.includes("](/")){ //enable relative paths
-                      if( (x.includes("\":ignore\"")) ||  (x.includes("\":ignore\""))  ){
-                        return x.replace("](","]("+root_url+purl+"/") ;
-                      }
-                      return x.replace("](","]("+purl+"/") ;
-                    }else{
-                      if(x.includes(":ignore")){
-                        return x.replace("](","]("+root_url) ;
-                      }
-                    }
-                    return x;  //just in case
+                    return x;
                   }
           )
-          return content;
         })
       }]
   };
