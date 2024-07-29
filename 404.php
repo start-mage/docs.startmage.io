@@ -2,7 +2,7 @@
 $url = $_SERVER['REQUEST_URI'];
 $url = str_replace('/docs/', '', $url);
 if(file_exists($url . '.md')) {
-    header("HTTP/1.1 200 OK");
+    header("Status 200 OK");
     include 'index.html';
 }else{
     header("Status: 404 Not Found");
