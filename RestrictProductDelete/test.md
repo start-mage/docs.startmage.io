@@ -2,7 +2,7 @@
 
 > A Magento 2 extension to restrict product delete to specific user roles [visit our store for more info](https://startmage.io/store/magento-2/restrict-product-delete/).
 
-<a target="_blank" href="https://www.startmage.io">Example</a>
+<a href="https://startmage.io/store/magento-2/restrict-product-delete/">visit our store for more info</a>
 
 ## Site Setup
 
